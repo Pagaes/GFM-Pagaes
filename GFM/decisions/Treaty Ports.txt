@@ -2091,9 +2091,14 @@ political_decisions = {
             1540 = { secede_province = THIS change_controller = THIS }
             add_country_modifier = { name = chinese_treaty_port duration = 1095 }
             1540 = { trade_goods = precious_goods }
+			badboy = 1
         }
         ai_will_do = {
-            factor = 1
+            factor = 0
+			modifier = {
+				factor = 1
+				owns = 1538
+			}
 			modifier = {
 				factor = 0
 				tag = ENG
@@ -2177,7 +2182,7 @@ political_decisions = {
             1539 = { trade_goods = precious_goods }
         }
         ai_will_do = {
-            factor = 1
+            factor = 0
 			modifier = {
 				factor = 0
 				tag = ENG
