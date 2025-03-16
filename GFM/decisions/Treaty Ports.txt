@@ -2182,7 +2182,7 @@ political_decisions = {
             1539 = { trade_goods = precious_goods }
         }
         ai_will_do = {
-            factor = 0
+            factor = 1
 			modifier = {
 				factor = 0
 				tag = ENG
