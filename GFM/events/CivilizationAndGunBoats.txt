@@ -4598,6 +4598,8 @@ province_event = {
 				province_id = 1961
 				owner = { NOT = { has_country_flag = rented_chusan } }
 			}
+			province_id = 1540
+			province_id = 1439
         }
         port = yes
         is_core = CHI
@@ -4715,6 +4717,76 @@ province_event = {
 
 }
 
+#The Flight to Nantung
+province_event = {
+    id = 90964
+    title = "EVTNAME90964"
+    desc = "EVTDESC90964"
+
+    fire_only_once = yes
+
+    trigger = {
+        province_id = 1540
+        1540 = { trade_goods = precious_goods }
+        1540 = { owner = { civilized = yes capital_scope = { NOT = { continent = asia } } } }
+    }
+
+    mean_time_to_happen = { days = 1 }
+
+    immediate = {
+        1540 = { any_pop = { limit = { type = labourers culture = han_chinese } move_pop = 1541 } }
+        }
+
+    option = {
+        name = "EVTOPTA90964"
+
+        any_pop = {
+            limit = {
+                culture = han_chinese
+            }
+            pop_type = labourers
+            reduce_pop = 0.9
+        }
+		badboy = 1
+
+    }
+
+}
+
+#The Ghost City of Soochow
+province_event = {
+    id = 90965
+    title = "EVTNAME90965"
+    desc = "EVTDESC90965"
+
+    fire_only_once = yes
+
+    trigger = {
+        province_id = 1539
+        1539 = { trade_goods = precious_goods }
+        1539 = { owner = { civilized = yes capital_scope = { NOT = { continent = asia } } } }
+    }
+
+    mean_time_to_happen = { days = 1 }
+
+    immediate = {
+        1539 = { any_pop = { limit = { type = labourers culture = han_chinese } move_pop = 1605} }
+        }
+
+    option = {
+        name = "EVTOPTA90965"
+
+        any_pop = {
+            limit = {
+                culture = han_chinese
+            }
+            pop_type = labourers
+            reduce_pop = 2.3
+        }
+
+    }
+
+}
 
 #Cleaning Bukhara cores on Kandahar
 country_event = {
