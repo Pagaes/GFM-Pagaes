@@ -102,18 +102,20 @@ political_decisions = {
 		
 		allow = {
 			AND = {
-				718 = { is_core = THIS owned_by = THIS }
+				718 = { is_core = THIS owned_by = THIS } # Minsk
 				social_science = 1
 				citizenship_policy = full_citizenship
 				NOT = { citizens_rights = primary_culture_only }
 			}
 		}
-		effect = { 
+		effect = {
 			prestige = 5
 			add_accepted_culture = byelorussian
 			set_country_flag = united_with_belarussians
 			any_pop = {
-                limit = { has_pop_culture = byelorussian }
-                militancy = -5
-            }
+                	limit = { has_pop_culture = byelorussian }
+                	militancy = -5
+			}
 		}
+	}
+}
