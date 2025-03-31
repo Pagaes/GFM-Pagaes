@@ -1,6 +1,7 @@
 political_decisions = {
+
     grand_duchy_lit = {
-        picture = grand_lithuania
+        picture = the_new_army
         potential = {
 			938 = { owned_by = THIS is_core = THIS }
 			OR = {
@@ -42,13 +43,13 @@ political_decisions = {
         effect = {
             set_country_flag = grand_duchy_lit
             badboy = 8
-            BYE = { all_core = { add_core = LIT add_core = THIS } }
-            945 = { remove_core = LIT remove_core = THIS }
-            944 = { remove_core = LIT remove_core = THIS }
-            949 = { remove_core = LIT remove_core = THIS }
-            1007 = { remove_core = LIT remove_core = THIS }
-            943 = { remove_core = LIT remove_core = THIS }
-            1015 = { remove_core = LIT remove_core = THIS }
+            BYE = { all_core = { add_core = LIT } }
+            945 = { remove_core = LIT }
+            944 = { remove_core = LIT }
+            949 = { remove_core = LIT }
+            1007 = { remove_core = LIT }
+            943 = { remove_core = LIT }
+            1015 = { remove_core = LIT }
         }
     }
 
@@ -94,29 +95,27 @@ political_decisions = {
 	accept_belarussians = {
 		picture = form_BYE
 		potential = {
-			OR = {
-				tag = LIT
-				AND = {
-					tag = UBD
-					accepted_culture = lithuanian
-				}
-			}
+			tag = LIT
 			has_country_flag = grand_duchy_lit
 			NOT = { has_country_flag = united_with_belarussians }
 		}
+		
 		allow = {
-			718 = { is_core = THIS owned_by = THIS } # Minsk
-			empiricism = 1
-			citizenship_policy = full_citizenship
-			NOT = { citizens_rights = primary_culture_only }
+			AND = {
+				718 = { is_core = THIS owned_by = THIS }
+				social_science = 1
+				citizenship_policy = full_citizenship
+				NOT = { citizens_rights = primary_culture_only }
+			}
 		}
-		effect = {
+		effect = { 
+			prestige = 5
 			add_accepted_culture = byelorussian
 			set_country_flag = united_with_belarussians
 			any_pop = {
-				limit = { has_pop_culture = byelorussian }
-				militancy = -5
-			}
+                limit = { has_pop_culture = byelorussian }
+                militancy = -5
+            }
 		}
 	}
 }
