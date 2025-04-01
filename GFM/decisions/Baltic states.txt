@@ -5,6 +5,10 @@ political_decisions = {
             NOT = { exists = UBD }
             NOT = { has_global_flag = baltic_states_formed }
             NOT = { has_country_flag = post_colonial_country }
+			OR = { 
+				NOT = { has_country_flag = grand_duchy_lit }
+				has_global_flag = fantasy_countries_enabled
+			}
         }
 
         allow = {
@@ -163,6 +167,26 @@ political_decisions = {
 		
 		effect = { 
 			549 = { owner = { country_event = 31502003 } }
+		}
+		
+		ai_will_do = { factor = 0 }
+	}
+	
+	GER_sway_the_baltic = {
+		picture = treaty_signing
+		potential = { 
+			is_greater_power = yes
+			UBD = { government = prov_gov_conservative war = no }
+			owns = 549
+		}
+		
+		allow = { 
+			alliance_with = UBD
+			UBD = { in_sphere = THIS }
+		}
+		
+		effect = { 
+			country_event = 31502020
 		}
 		
 		ai_will_do = { factor = 0 }
